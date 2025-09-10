@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* Root variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-darkyellow: #D8D417;
+
+  --font-figtree: "Figtree", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+/* Tailwind theme overrides */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-darkyellow: var(--color-darkyellow);
+  --border-graylight: #D1D1DB;
+
+  --font-sans: var(--font-figtree);
+  --font-figtree: var(--font-figtree);
+  --font-open-sans: var(--font-open-sans);
+  --font-raleway: var(--font-raleway);
+}
+
+/* Base body styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-figtree);
+}
