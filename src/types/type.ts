@@ -3,6 +3,9 @@ export interface State {
   name: string
   __v: number
   image: string
+  slug?: string
+  totalSchemes?: number
+  totalDiscussions?: number
 }
 
 export interface StateResponse {

@@ -27,7 +27,7 @@ export default function FeaturedSchemes() {
 				} else {
 					setError(true);
 				}
-			} catch (err: unknown) {
+			} catch {
 				setError(true);
 			} finally {
 				setLoading(false);
@@ -65,13 +65,9 @@ export default function FeaturedSchemes() {
 						states.map((state) => (
 							<li
 								key={state.stateId}
-								onClick={() =>
-									router.push(
-										`/schemes?stateId=${
-											state.stateId
-										}&stateName=${encodeURIComponent(state.name)}`
-									)
-								}
+								onClick={() => {
+									router.push(`/state/${state.slug}`);
+								}}
 								className="border border-[#D1D1DB] px-4 py-5 transition duration-300 bg-white rounded-xl hover:shadow-md cursor-pointer"
 							>
 								<div className="flex justify-center mb-5">

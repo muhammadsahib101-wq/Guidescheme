@@ -23,7 +23,7 @@ const SchemeCard = ({
 	return (
 		<article className="w-full max-w-[924px] md:h-[250px] bg-[#F9F9F9] rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300 mb-8">
 			<Link
-				href={`schemes/${slug}`}
+				href={`/schemes/${slug}`}
 				className="flex flex-col md:flex-row h-full"
 			>
 				{/* Image Container - Fixed size on desktop, responsive on mobile */}

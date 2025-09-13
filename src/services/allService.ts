@@ -127,6 +127,7 @@ export interface StateSchemeData {
   name: string;
   image: string;
   totalSchemes: number;
+  slug?: string;
 }
 
 export interface StatesResponse {
@@ -140,6 +141,7 @@ export interface Category {
   name: string;
   image: string | null;
   totalSchemes: number;
+  slug?: string;
 }
 
 export interface CategoriesResponse {
@@ -157,14 +159,23 @@ export const getAllSchemes = async (
   categoryId?: string,
   limit?: number,
   skip?: number,
-  signal?: AbortSignal
+  signal?: AbortSignal,
+  stateSlug?: string,
+  categorySlug?: string
 ): Promise<SchemesResponse> => {
   try {
     let url = 'getAllSchemes';
     const params = new URLSearchParams();
 
-    if (stateId) params.append('stateId', stateId);
-    if (categoryId) params.append('categoryId', categoryId);
+
+    if (stateSlug) {
+      params.append('stateSlug', stateSlug);
+    }
+
+    if (categorySlug) {
+      params.append('categorySlug', categorySlug);
+    }
+
     if (limit !== undefined) params.append('limit', String(limit));
     if (skip !== undefined) params.append('skip', String(skip));
 

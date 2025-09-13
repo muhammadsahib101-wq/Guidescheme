@@ -22,21 +22,13 @@ const StateDropdown = ({
 }: Props) => {
 	const router = useRouter();
 	const [states, setStates] = useState<State[]>([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
-
 	useEffect(() => {
 		const fetchStates = async () => {
 			try {
-				setLoading(true);
 				const statesData = await getAllStates();
 				setStates(statesData);
-				setError(null);
 			} catch (err) {
-				setError("Failed to load states");
 				console.error("Error fetching states:", err);
-			} finally {
-				setLoading(false);
 			}
 		};
 
@@ -70,12 +62,7 @@ const StateDropdown = ({
 						{({ active }) => (
 							<button
 								onClick={() => {
-									setSelectedState({ name: state.name, image: state.image });
-									router.push(
-										`/schemes?stateId=${
-											state._id
-										}&stateName=${encodeURIComponent(state.name)}`
-									);
+									router.push(`/state/${state.slug}`);
 								}}
 								className={`${
 									active ? "bg-gray-100" : ""
