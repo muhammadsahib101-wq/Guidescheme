@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Government Scheme Guide",
-  description: "A comprehensive guide to government schemes and benefits",
+  title: "Government Scheme Guide | Trusted Platform for Govt Scheme Information",
+  description: "Govtschemeguide.com is a simple and trusted website to find the latest government schemes in India. The website covers schemes for students, farmers, women, workers, business owners, and families in every state.",
 };
 
 export default function RootLayout({
