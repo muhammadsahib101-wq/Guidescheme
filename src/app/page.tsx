@@ -11,7 +11,7 @@ export default function Home() {
 		<>
 			<Head>
 				<title>
-					Govt Schemes India | Discover 1,000+ Government Welfare Schemes
+					Home
 				</title>
 				<meta
 					name="description"
