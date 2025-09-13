@@ -58,13 +58,9 @@ export default function CategoriesGrid() {
 						categories.map((cat) => (
 							<div
 								key={cat.categoryId}
-								onClick={() =>
-									router.push(
-										`/schemes?categoryId=${
-											cat.categoryId
-										}&categoryName=${encodeURIComponent(cat.name)}`
-									)
-								}
+								onClick={() => {
+									router.push(`/category/${cat.slug}`);
+								}}
 								className="flex flex-col items-center justify-center p-6 border rounded-xl text-center cursor-pointer bg-white border-[#D1D1DB] hover:shadow-md transition"
 							>
 								<Image
