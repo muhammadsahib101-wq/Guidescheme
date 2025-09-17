@@ -1,38 +1,38 @@
 "use client";
 
+import { ApiScheme } from "@/services/allService";
 import { useRouter } from "next/navigation";
+import { useMemo } from "react";
+import Link from "next/link";
 
-export default function SchemeNavigation({
-	activeSection,
-	scrollToSection,
-}: {
-	activeSection: string | null;
-	scrollToSection: (sectionId: string) => void;
-}) {
+export default function SchemeNavigation({ scheme }: { scheme: ApiScheme }) {
 	const router = useRouter();
 
-	const sections = [
-		{ id: "about", label: "About Scheme" },
-		{ id: "eligibility", label: "Eligibility Criteria" },
-		{ id: "application", label: "Application Process" },
-	];
+	const sections = useMemo(() => {
+		const createdSections = [];
+		const linkKeys: (keyof ApiScheme)[] = ["link1", "link2", "link3"];
+
+		for (const key of linkKeys) {
+			const linkData = scheme[key] as { name?: string; url?: string };
+
+			if (linkData && linkData.name && linkData.url) {
+				createdSections.push({ id: linkData.name, url: linkData.url });
+			}
+		}
+		return createdSections;
+	}, [scheme]);
 
 	return (
 		<div className="container px-3 mx-auto flex flex-wrap justify-center gap-3 mb-6">
-			{sections.map(({ id, label }) => (
-				<button
-					key={id}
-					onClick={() => scrollToSection(id)}
-					className={`min-w-[160px] px-4 py-2 rounded-full font-medium text-base font-figtree transition-all duration-200 
-						${
-							activeSection === id
-								? "bg-yellow-500 shadow-md"
-								: "bg-darkyellow hover:bg-yellow-400"
-						}
-					`}
+			{sections.map(({ id, url }) => (
+				<Link
+					target="_blank"
+					href={url}
+					key={url}
+					className={`min-w-[160px] text-center px-4 py-2 rounded-full font-medium text-base font-figtree transition-all duration-200 bg-darkyellow hover:bg-yellow-400`}
 				>
-					{label}
-				</button>
+					{id}
+				</Link>
 			))}
 
 			{/* Discussion Forum Button */}

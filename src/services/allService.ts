@@ -106,6 +106,18 @@ export interface ApiScheme {
   excerpt?: string;
   seoTitle?: string;
   seoMetaDescription?: string;
+  link1: {
+    name: string;
+    url: string;
+  };
+  link2: {
+    name: string;
+    url: string;
+  };
+  link3: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface SchemesResponse {
