@@ -42,8 +42,8 @@ const Navbar = () => {
 					<Link href="/about" className="text-black hover:underline">
 						About
 					</Link>
-					<Link href="/categorySchemes" className="text-black hover:underline">
-						Category schemes
+					<Link href="/category" className="text-black hover:underline">
+						Category
 					</Link>
 					<Link href="/contact" className="text-black hover:underline">
 						Contact Us
@@ -75,11 +75,8 @@ const Navbar = () => {
 					<Link href="/about" className="block text-black hover:underline">
 						About
 					</Link>
-					<Link
-						href="/categorySchemes"
-						className="block text-black hover:underline"
-					>
-						Category schemes
+					<Link href="/category" className="block text-black hover:underline">
+						Category
 					</Link>
 					<Link href="/contact" className="block text-black hover:underline">
 						Contact Us

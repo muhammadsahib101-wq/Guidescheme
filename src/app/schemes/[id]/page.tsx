@@ -100,10 +100,7 @@ export default function SchemeDetailsPage() {
 			<SchemeMeta scheme={scheme} />
 			<main className="min-h-screen">
 				<SchemeHeader scheme={scheme} formatDate={formatDate} />
-				<SchemeNavigation
-					activeSection={activeSection}
-					scrollToSection={scrollToSection}
-				/>
+				<SchemeNavigation scheme={scheme} />
 
 				{/* Grid Layout */}
 				<div className="container mx-auto px-4 pb-8 md:grid md:grid-cols-12 md:gap-8">

@@ -62,6 +62,7 @@ const StateDropdown = ({
 						{({ active }) => (
 							<button
 								onClick={() => {
+									setSelectedState({ name: state.name, image: state.image });
 									router.push(`/state/${state.slug}`);
 								}}
 								className={`${
