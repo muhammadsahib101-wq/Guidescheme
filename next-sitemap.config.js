@@ -10,7 +10,6 @@ module.exports = {
     const extraPaths = [];
 
     try {
-      // 1️⃣ Schemes
       const schemesRes = await fetch("https://govt-scheme-guide-api.onrender.com/api/user/getAllSchemes", {
         headers: { Accept: "application/json" },
       });
@@ -30,7 +29,6 @@ module.exports = {
         console.error("API Error (schemes):", schemesRes.status, schemesRes.statusText);
       }
 
-      // 2️⃣ States
       const statesRes = await fetch("https://govt-scheme-guide-api.onrender.com/api/user/getAllStates", {
         headers: { Accept: "application/json" },
       });
