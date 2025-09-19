@@ -48,6 +48,25 @@ module.exports = {
         console.error("API Error (states):", statesRes.status, statesRes.statusText);
       }
 
+      const categoryRes = await fetch("https://govt-scheme-guide-api.onrender.com/api/user/getSchemesByCategory", {
+        headers: { Accept: "application/json" },
+      });
+
+      if (categoryRes.ok) {
+        const categoryData = await categoryRes.json();
+        const categoryList = Array.isArray(categoryData.data) ? categoryData.data : categoryData;
+
+        categoryList.forEach((category) => {
+          extraPaths.push({
+            loc: `/category/${category.slug}`, // adjust if your route is different
+            changefreq: "weekly",
+            priority: 0.7,
+          });
+        });
+      } else {
+        console.error("API Error (categories):", categoryRes.status, categoryRes.statusText);
+      }
+
       return extraPaths;
     } catch (error) {
       console.error("Error fetching additional paths:", error);
