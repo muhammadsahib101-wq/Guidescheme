@@ -107,14 +107,14 @@ const StateToLanguage = ({ isFullWidth = false }: StateDropdownProps) => {
     <>
       <div id="google_translate_element" style={{ display: "none" }}></div>
       <select
-        className={`notranslate border px-3 py-2 rounded text-black ${
+        className={`notranslate border px-3 py-2 rounded-3xl text-black ${
           isFullWidth ? "w-full" : ""
         }`}
         value={selectedState}
         onChange={handleStateChange}
-        aria-label="Select State"
+        aria-label="Select Language"
       >
-        <option value="">-- Select State --</option>
+        <option value="">-- Select Language --</option>
         {Object.keys(stateToLanguage).map((state) => (
           <option key={state} value={state}>
             {state}
