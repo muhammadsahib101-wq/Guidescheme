@@ -38,7 +38,7 @@ const StateDropdown = ({
 	return (
 		<Menu as="div" className="relative inline-block text-left w-full">
 			<Menu.Button
-				className={`flex items-center border rounded-full px-4 py-1 space-x-2 text-black ${
+				className={`flex items-center border rounded-full px-4 py-1 space-x-2 text-black w-full ${
 					isFullWidth ? "w-full" : ""
 				}`}
 			>

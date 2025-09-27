@@ -29,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+{/* <div id="google_translate_element" style={{ display: "none" }}></div> */}
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">

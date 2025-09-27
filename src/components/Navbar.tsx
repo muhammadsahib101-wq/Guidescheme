@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../app/assets/logo.png";
 import StateDropdown from "./StateDropdown";
-
+import StateToLanguage from "./StateToLanguage";
 const Navbar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [selectedState, setSelectedState] = useState<{
@@ -54,6 +54,7 @@ const Navbar = () => {
 						selectedState={selectedState}
 						setSelectedState={setSelectedState}
 					/>
+                   <StateToLanguage />
 				</div>
 
 				{/* Mobile Hamburger */}
@@ -88,6 +89,8 @@ const Navbar = () => {
 						setSelectedState={setSelectedState}
 						isFullWidth
 					/>
+                   <StateToLanguage />
+
 				</div>
 			)}
 		</nav>
