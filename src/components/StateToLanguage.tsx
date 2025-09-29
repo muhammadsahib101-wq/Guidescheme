@@ -16,38 +16,20 @@ declare global {
   }
 }
 
-const stateToLanguage: { [key: string]: string } = {
-"Andhra Pradesh": "te", // Telugu
-  "Arunachal Pradesh": "en", // English (multiple languages, English as default)
-  Assam: "as", // Assamese
-  Bihar: "hi", // Hindi
-  Chhattisgarh: "hi", // Hindi
-  Goa: "en", // English (Konkani and Marathi, English as default)
-  Gujarat: "gu", // Gujarati
-  Haryana: "hi", // Hindi
-  "Himachal Pradesh": "hi", // Hindi
-  Jharkhand: "hi", // Hindi
-  Karnataka: "kn", // Kannada
-  Kerala: "ml", // Malayalam
-  "Madhya Pradesh": "hi", // Hindi
-  Maharashtra: "mr", // Marathi
-  Manipur: "en", // English (Meitei/Manipuri and others, English as default)
-  Meghalaya: "en", // English (Khasi and Garo, English as default)
-  Mizoram: "en", // English (Mizo and others, English as default)
-  Nagaland: "en", // English (multiple tribal languages, English as default)
-  Odisha: "or", // Odia
-  Punjab: "pa", // Punjabi
-  Rajasthan: "hi", // Hindi
-  Sikkim: "en", // English (Nepali and others, English as default)
-  "Tamil Nadu": "ta", // Tamil
-  Telangana: "te", // Telugu
-  Tripura: "bn", // Bengali
-  "Uttar Pradesh": "hi", // Hindi
-  Uttarakhand: "hi", // Hindi
-  "West Bengal": "bn", // Bengali
-  Delhi: "hi", // Hindi
-  "Jammu and Kashmir": "ur", // Urdu
-  Ladakh: "en", // English (Ladakhi and others, English as default)
+const languageToCode: { [key: string]: string } = {
+  Telugu: "te", 
+  English: "en",
+  Assamese: "as",
+  Hindi: "hi",
+  Gujarati: "gu",
+  Kannada: "kn",
+  Malayalam: "ml",
+  Marathi: "mr",
+  Odia: "or",
+  Punjabi: "pa",
+  Tamil: "ta",
+  Bengali: "bn",
+  Urdu: "ur",
 };
 
 interface StateDropdownProps {
@@ -90,10 +72,10 @@ const StateToLanguage = ({ isFullWidth = false }: StateDropdownProps) => {
   }, []);
 
   useEffect(() => {
-    if (selectedState && stateToLanguage[selectedState]) {
+    if (selectedState && languageToCode[selectedState]) {
       const select = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
       if (select) {
-        select.value = stateToLanguage[selectedState];
+        select.value = languageToCode[selectedState];
         select.dispatchEvent(new Event("change"));
       }
     }
@@ -115,9 +97,9 @@ const StateToLanguage = ({ isFullWidth = false }: StateDropdownProps) => {
         aria-label="Select Language"
       >
         <option value="">-- Select Language --</option>
-        {Object.keys(stateToLanguage).map((state) => (
-          <option key={state} value={state}>
-            {state}
+        {Object.keys(languageToCode).map((language) => (
+          <option key={language} value={language}>
+            {language}
           </option>
         ))}
       </select>
