@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://govtschemeguide.com/",
+  siteUrl: "https://scholar2-rdll.onrender.com",
   generateRobotsTxt: true,
   sitemapSize: 7000,
 
@@ -10,7 +10,7 @@ module.exports = {
     const extraPaths = [];
 
     try {
-      const schemesRes = await fetch("https://scholar2.vercel.app/api/user/getAllSchemes", {
+      const schemesRes = await fetch("https://scholar2-rdll.onrender.com/api/user/getAllSchemes", {
         headers: { Accept: "application/json" },
       });
 
@@ -29,7 +29,7 @@ module.exports = {
         console.error("API Error (schemes):", schemesRes.status, schemesRes.statusText);
       }
 
-      const statesRes = await fetch("https://scholar2.vercel.app/api/user/getAllStates", {
+      const statesRes = await fetch("https://scholar2-rdll.onrender.com/api/user/getAllStates", {
         headers: { Accept: "application/json" },
       });
 
@@ -48,7 +48,7 @@ module.exports = {
         console.error("API Error (states):", statesRes.status, statesRes.statusText);
       }
 
-      const categoryRes = await fetch("https://scholar2.vercel.app/api/user/getSchemesByCategory", {
+      const categoryRes = await fetch("https://scholar2-rdll.onrender.com/api/user/getSchemesByCategory", {
         headers: { Accept: "application/json" },
       });
 
