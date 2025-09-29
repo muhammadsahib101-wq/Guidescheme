@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://scholar2-rdll.onrender.com",
+  siteUrl: "https://govtschemeguide.com/",
   generateRobotsTxt: true,
   sitemapSize: 7000,
 
