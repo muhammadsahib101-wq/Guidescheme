@@ -160,7 +160,7 @@ export default function Footer() {
 						<ul className="flex flex-wrap gap-4 justify-center sm:justify-end">
 							<li>
 								<a
-									href="/privacy-policy"
+									href="/privacy"
 									className="hover:underline"
 									tabIndex={0}
 								>
