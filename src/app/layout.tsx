@@ -23,9 +23,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  alternates: {
-    canonical: "https://govtschemeguide.com",
-  },
   icons: {
     icon: "/fav.png", // ✅ your favicon
     shortcut: "/fav.png",
