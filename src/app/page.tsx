@@ -44,7 +44,7 @@ export default function Home() {
 					content="Find and compare over 1,000+ government welfare schemes in India. Get eligibility, benefits, and application steps for agriculture, education, business, health, and more."
 				/>
 				<meta name="twitter:image" content="/about-img.png" />
-				<link rel="canonical" href="https://www.govtschemesindia.com/" />
+				{/* <link rel="canonical" href="https://www.govtschemesindia.com/" /> */}
 			</Head>
 
 			{/* Structured Data for Website */}
