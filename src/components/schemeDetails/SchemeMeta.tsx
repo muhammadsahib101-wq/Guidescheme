@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ApiScheme } from "@/services/allService";
 
 export default function SchemeMeta({ scheme }: { scheme: ApiScheme }) {
+const categorySlug = scheme?.slug || "general";
 	return (
 		<Head>
 			<title>{scheme.schemeTitle} | Government Scheme Details</title>
@@ -28,6 +29,10 @@ export default function SchemeMeta({ scheme }: { scheme: ApiScheme }) {
 			<meta
 				name="twitter:title"
 				content={`${scheme.schemeTitle} | Government Scheme Details`}
+			/>
+            <link
+				rel="canonical"
+				href={`https://govtschemeguide.com/category/${categorySlug}`}
 			/>
 			<meta name="twitter:description" content={scheme.about} />
 			<meta
