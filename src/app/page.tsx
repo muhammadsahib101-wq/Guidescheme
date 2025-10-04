@@ -9,7 +9,7 @@ import FeaturedSchemes from "@/components/FeaturedSchemes";
 export default function Home() {
 	return (
 		<>
-			<Head>
+			<head>
 				<title>
 			Govt Schemes India | Discover 1,000+ Government Welfare Schemes
 				</title>
@@ -45,7 +45,7 @@ export default function Home() {
 				/>
 				<meta name="twitter:image" content="/about-img.png" />
 				<link rel="canonical" href="https://www.govtschemesindia.com/" />
-			</Head>
+			</head>
 
 			{/* Structured Data for Website */}
 			<Script id="website-ld-json" type="application/ld+json">

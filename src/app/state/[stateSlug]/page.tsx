@@ -14,7 +14,6 @@ const SCHEMES_PER_PAGE = 6;
 function StateSchemesContent() {
   const params = useParams();
   const stateSlug = params.stateSlug as string;
-
   const [schemes, setSchemes] = useState<ApiScheme[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -235,7 +234,7 @@ function StateSchemesContent() {
 
   return (
     <>
-      <Head>
+      <head>
         <title>{getPageTitle()}</title>
         <meta
           name="description"
@@ -269,7 +268,7 @@ function StateSchemesContent() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-      </Head>
+      </head>
 
       <section className="bg-white mt-14" aria-labelledby="schemes-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

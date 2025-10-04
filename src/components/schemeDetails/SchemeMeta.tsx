@@ -1,10 +1,11 @@
-import Head from "next/head";
+// import Head from "next/head";
 import { ApiScheme } from "@/services/allService";
 
 export default function SchemeMeta({ scheme }: { scheme: ApiScheme }) {
 const categorySlug = scheme?.slug || "general";
 	return (
-		<Head>
+		// eslint-disable-next-line @next/next/no-head-element
+		<head>
 			<title>{scheme.schemeTitle} | Government Scheme Details</title>
 			<meta name="description" content={scheme.about} />
 			<meta
@@ -30,7 +31,7 @@ const categorySlug = scheme?.slug || "general";
 				name="twitter:title"
 				content={`${scheme.schemeTitle} | Government Scheme Details`}
 			/>
-            <link
+			<link
 				rel="canonical"
 				href={`https://govtschemeguide.com/category/${categorySlug}`}
 			/>
@@ -39,6 +40,6 @@ const categorySlug = scheme?.slug || "general";
 				name="twitter:image"
 				content={scheme.bannerImage?.url || scheme.cardImage?.url}
 			/>
-		</Head>
+		</head>
 	);
 }
