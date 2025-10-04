@@ -8,7 +8,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://govtschemeguide.co
 export default function AboutPage() {
   return (
     <>
-      <Head>
+      <head>
         <title>
           About Govt Schemes India | Empowering Citizens with Welfare Information
         </title>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           httpEquiv="Content-Security-Policy"
           content="default-src 'self'; img-src 'self' https://*.govtschemesindia.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';"
         />
-      </Head>
+      </head>
 
       {/* Structured Data for Organization and WebPage */}
       <Script id="organization-ld-json" type="application/ld+json">

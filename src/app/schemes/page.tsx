@@ -226,7 +226,7 @@ function SchemesContent() {
 
 	return (
 		<>
-			<Head>
+			<head>
 				<title>{getPageTitle()}</title>
 				<meta
 					name="description"
@@ -266,7 +266,7 @@ function SchemesContent() {
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
 				/>
-			</Head>
+			</head>
 
 			<section className="bg-white mt-14" aria-labelledby="schemes-heading">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
