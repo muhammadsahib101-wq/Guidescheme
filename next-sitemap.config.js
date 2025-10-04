@@ -10,6 +10,7 @@ module.exports = {
     const extraPaths = [];
 
     try {
+      // Existing fetch for all schemes (non-category based)
       const schemesRes = await fetch("https://scholar2-rdll.onrender.com/api/user/getAllSchemes", {
         headers: { Accept: "application/json" },
       });
@@ -20,7 +21,7 @@ module.exports = {
 
         schemesList.forEach((scheme) => {
           extraPaths.push({
-            loc: `/schemes/${scheme.slug}`, // or scheme.slug
+            loc: `/schemes/${scheme.slug}`,
             changefreq: "weekly",
             priority: 0.7,
           });
@@ -29,6 +30,7 @@ module.exports = {
         console.error("API Error (schemes):", schemesRes.status, schemesRes.statusText);
       }
 
+      // Existing fetch for all states
       const statesRes = await fetch("https://scholar2-rdll.onrender.com/api/user/getAllStates", {
         headers: { Accept: "application/json" },
       });
@@ -48,23 +50,71 @@ module.exports = {
         console.error("API Error (states):", statesRes.status, statesRes.statusText);
       }
 
+      // Existing fetch for categories
       const categoryRes = await fetch("https://scholar2-rdll.onrender.com/api/user/getSchemesByCategory", {
         headers: { Accept: "application/json" },
       });
 
+      let categoryList = [];
       if (categoryRes.ok) {
         const categoryData = await categoryRes.json();
-        const categoryList = Array.isArray(categoryData.data) ? categoryData.data : categoryData;
+        categoryList = Array.isArray(categoryData.data) ? categoryData.data : categoryData;
 
         categoryList.forEach((category) => {
           extraPaths.push({
-            loc: `/category/${category.slug}`, // adjust if your route is different
+            loc: `/category/${category.slug}`,
             changefreq: "weekly",
             priority: 0.7,
           });
         });
       } else {
         console.error("API Error (categories):", categoryRes.status, categoryRes.statusText);
+      }
+
+      // New: Pagination to fetch ALL schemes for each category
+      const schemesPerPage = 100;
+
+      for (const category of categoryList) {
+        let skip = 0;
+        let totalSchemes = Infinity;
+
+        while (skip < totalSchemes) {
+          const res = await fetch(
+            `https://scholar2-rdll.onrender.com/api/user/getAllSchemes?categorySlug=${category.slug}&limit=${schemesPerPage}&skip=${skip}`,
+            {
+              headers: { Accept: "application/json" },
+            }
+          );
+
+          if (!res.ok) {
+            console.error(`Failed to fetch schemes for category ${category.slug}, ${res.status}`);
+            break;
+          }
+
+          const data = await res.json();
+          const schemes = Array.isArray(data.data) ? data.data : data;
+
+          // totalSchemes might be in data.totalCount or data.total
+          if (data.totalCount !== undefined) {
+            totalSchemes = data.totalCount;
+          } else if (data.total !== undefined) {
+            totalSchemes = data.total;
+          } else {
+            if (schemes.length < schemesPerPage) {
+              break;
+            }
+          }
+
+          schemes.forEach((scheme) => {
+            extraPaths.push({
+              loc: `/schemes/${scheme.slug}`,
+              changefreq: "weekly",
+              priority: 0.7,
+            });
+          });
+
+          skip += schemesPerPage;
+        }
       }
 
       return extraPaths;
