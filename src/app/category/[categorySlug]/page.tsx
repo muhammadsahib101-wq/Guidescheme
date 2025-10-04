@@ -204,30 +204,18 @@ function CategorySchemesContent() {
 	};
 
 	const structuredData = {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: getPageTitle(),
-		description: `Explore government schemes and welfare programs for ${categoryName}.`,
-		publisher: {
-			"@type": "Organization",
-			name: "Govt Scheme Guide",
-			logo: {
-				"@type": "ImageObject",
-				url: "/logo.jpg",
-			},
-		},
-		mainEntity: schemes.map((scheme) => ({
-			"@type": "Article",
-			headline: scheme.schemeTitle,
-			description: scheme.about,
-			author: {
-				"@type": "Person",
-				name: scheme.author.name,
-			},
-			datePublished: scheme.publishedOn,
-			image: scheme.cardImage?.url,
-		})),
-	};
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: getPageTitle(),
+  description: `Explore government schemes and welfare programs for ${categoryName}.`,
+  itemListElement: schemes.map((scheme, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: `https://govtschemeguide.com/schemes/${scheme.slug}`,
+    name: scheme.schemeTitle,
+  })),
+};
+
 
 	if (loading && skip === 0) {
 		return <StateSchemesLoadingSkeleton />;
@@ -260,6 +248,7 @@ function CategorySchemesContent() {
 					name="twitter:description"
 					content={`Discover government schemes for ${categoryName}.`}
 				/>
+                <link rel="canonical" href={`https://govtschemeguide.com/category/${categorySlug}`} />
 				<meta name="twitter:image" content="/logo.jpg" />
 				<script
 					type="application/ld+json"
