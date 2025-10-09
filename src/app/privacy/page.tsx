@@ -4,7 +4,7 @@ import Head from "next/head";
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen text-white font-poppins" role="main">
-      <Head>
+      <head>
         <title>Privacy Policy -Gvt</title>
         <meta name="description" content="Learn about how company protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
         <meta name="keywords" content="company privacy policy, data protection, user privacy, data security, GDPR compliance, privacy rights" />
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
         {/* Additional Meta Tags */}
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://govtschemeguide.com/privacy" />
-      </Head>
+      </head>
       
       {/* Banner Section */}
       <header className="relative w-full py-20 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]" role="banner">

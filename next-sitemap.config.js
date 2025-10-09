@@ -4,8 +4,10 @@ const fetch = require("node-fetch");
 module.exports = {
   siteUrl: "https://govtschemeguide.com/",
   generateRobotsTxt: true,
-  sitemapSize: 7000,
-
+  sitemapSize: 50000,
+  changefreq: 'daily',
+  priority: 0.7,
+  generateIndexSitemap: false,
   additionalPaths: async () => {
     const extraPaths = [];
 
