@@ -8,6 +8,14 @@ module.exports = {
   changefreq: 'daily',
   priority: 0.7,
   generateIndexSitemap: false,
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      changefreq: "daily", // force it here
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+    };
+  },
   additionalPaths: async () => {
     const extraPaths = [];
 
