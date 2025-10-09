@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -14,36 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title:
-    "Government Scheme Guide | Trusted Platform for Govt Scheme Information",
-  description:
-    "Govtschemeguide.com is a simple and trusted website to find the latest government schemes in India. The website covers schemes for students, farmers, women, workers, business owners, and families in every state.",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/fav.png", // ✅ your favicon
-    shortcut: "/fav.png",
-    apple: "/fav.png", // ✅ iOS/Apple touch icon
-  },
-  openGraph: {
-    title: "Government Scheme Guide | Trusted Platform for Govt Scheme Information",
-    description:
-      "Govtschemeguide.com is a simple and trusted website to find the latest government schemes in India. The website covers schemes for students, farmers, women, workers, business owners, and families in every state.",
-    url: "https://govtschemeguide.com",
-    type: "website",
-    images: ["/about-img.png"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Government Scheme Guide | Trusted Platform for Govt Scheme Information",
-    description:
-      "Govtschemeguide.com is a simple and trusted website to find the latest government schemes in India. The website covers schemes for students, farmers, women, workers, business owners, and families in every state.",
-    images: ["/about-img.png"],
-  },
-};
+
 
 
 export default function RootLayout({
