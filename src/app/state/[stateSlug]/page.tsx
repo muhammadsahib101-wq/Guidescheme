@@ -88,7 +88,7 @@ function StateSchemesContent() {
           response.data[0].state
         ) {
           const state = response.data[0].state[0];
-          setStateName(state.name);
+          setStateName(state?.name);
         } else {
           setStateName(
             stateSlug
