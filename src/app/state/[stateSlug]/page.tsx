@@ -206,13 +206,13 @@ function StateSchemesContent() {
     "@type": "CollectionPage",
     name: getPageTitle(),
     description: `Explore government schemes and welfare programs in ${stateName}.`,
-    url: `https://govtschemeguide.com/state/${stateSlug}`,
+    url: `https://www.govtschemeguide.com/state/${stateSlug}`,
     publisher: {
       "@type": "Organization",
       name: "Govt Scheme Guide",
       logo: {
         "@type": "ImageObject",
-        url: "https://govtschemeguide.com/logo.jpg", // Use full absolute URL
+        url: "https://www.govtschemeguide.com/logo.jpg", // Use full absolute URL
       },
     },
     mainEntity: {
@@ -220,7 +220,7 @@ function StateSchemesContent() {
       itemListElement: schemes.map((scheme, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://govtschemeguide.com/schemes/${scheme.slug}`,
+        url: `https://www.govtschemeguide.com/schemes/${scheme.slug}`,
         name: scheme.schemeTitle,
         ...(scheme.about && { description: scheme.about }),
         ...(scheme.cardImage?.url && { image: scheme.cardImage.url }),
@@ -262,7 +262,7 @@ function StateSchemesContent() {
         <meta name="twitter:image" content="/logo.jpg" />
         <link
           rel="canonical"
-          href={`https://govtschemeguide.com/state/${stateSlug}`}
+          href={`https://www.govtschemeguide.com/state/${stateSlug}`}
         />
         <script
           type="application/ld+json"

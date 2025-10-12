@@ -211,7 +211,7 @@ function CategorySchemesContent() {
   itemListElement: schemes.map((scheme, index) => ({
     "@type": "ListItem",
     position: index + 1,
-    url: `https://govtschemeguide.com/schemes/${scheme.slug}`,
+    url: `https://www.govtschemeguide.com/schemes/${scheme.slug}`,
     name: scheme.schemeTitle,
   })),
 };
@@ -248,7 +248,7 @@ function CategorySchemesContent() {
 					name="twitter:description"
 					content={`Discover government schemes for ${categoryName}.`}
 				/>
-                <link rel="canonical" href={`https://govtschemeguide.com/category/${categorySlug}`} />
+                <link rel="canonical" href={`https://www.govtschemeguide.com/category/${categorySlug}`} />
 				<meta name="twitter:image" content="/logo.jpg" />
 				<script
 					type="application/ld+json"

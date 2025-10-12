@@ -33,7 +33,7 @@ const categorySlug = scheme?.slug || "general";
 			/>
 			<link
 				rel="canonical"
-				href={`https://govtschemeguide.com/category/${categorySlug}`}
+				href={`https://www.govtschemeguide.com/category/${categorySlug}`}
 			/>
 			<meta name="twitter:description" content={scheme.about} />
 			<meta

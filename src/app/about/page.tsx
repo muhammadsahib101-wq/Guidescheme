@@ -3,7 +3,7 @@ import Script from "next/script";
 import HowItWorks from "@/components/HowItWorks";
 
 // Environment variable for base URL
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://govtschemeguide.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.govtschemeguide.com";
 
 export default function AboutPage() {
   return (

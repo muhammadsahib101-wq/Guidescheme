@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://govtschemeguide.com/",
+  siteUrl: "https://www.govtschemeguide.com/",
   generateRobotsTxt: true,
   sitemapSize: 50000,
   changefreq: 'daily',

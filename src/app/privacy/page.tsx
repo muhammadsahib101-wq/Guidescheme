@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://govtschemeguide.com/privacy" />
+        <meta property="og:url" content="https://www.govtschemeguide.com/privacy" />
         <meta property="og:title" content="Privacy Policy - example" />
         <meta property="og:description" content="Learn about how example protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
         <meta property="og:image" content="https://example.com/preview.jpg" />
@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
         
         {/* Additional Meta Tags */}
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://govtschemeguide.com/privacy" />
+        <link rel="canonical" href="https://www.govtschemeguide.com/privacy" />
       </head>
       
       {/* Banner Section */}
