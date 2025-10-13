@@ -11,5 +11,18 @@
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "govtschemeguide.com"
+        }
+      ],
+      "destination": "https://www.govtschemeguide.com/:1",
+      "permanent": true
+    }
   ]
 }
