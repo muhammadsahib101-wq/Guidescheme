@@ -2,7 +2,6 @@
 
 import { useState, useEffect, Suspense, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
-import Head from "next/head";
 import SchemeCard from "@/components/card/SchemeCard";
 import RecentBlogSidebar from "@/components/card/RecentBlogSidebar";
 import { getAllSchemes, searchSchemes, ApiScheme } from "@/services/allService";
@@ -262,6 +261,7 @@ function SchemesContent() {
 					}${categoryName ? ` for ${categoryName}` : ""}.`}
 				/>
 				<meta name="twitter:image" content="/logo.jpg" />
+				<link rel="canonical" href="https://www.govtschemeguide.com/schemes" />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

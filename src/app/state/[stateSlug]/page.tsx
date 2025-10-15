@@ -111,6 +111,14 @@ function StateSchemesContent() {
     [stateSlug]
   );
 
+useEffect(() => {
+  if (stateSlug) {
+    document.title = `Government Schemes |  ${stateSlug}`;
+  } else {
+    document.title = "Government Schemes";
+  }
+}, [stateSlug]);
+
   useEffect(() => {
     const controller = new AbortController();
     fetchData(0, controller.signal);
@@ -235,7 +243,7 @@ function StateSchemesContent() {
   return (
     <>
       <head>
-        <title>{getPageTitle()}</title>
+        {/* <title>{getPageTitle()}</title> */}
         <meta
           name="description"
           content={`Discover government schemes in ${stateName}, including benefits, eligibility criteria, and application processes.`}

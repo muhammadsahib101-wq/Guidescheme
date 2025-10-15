@@ -9,6 +9,7 @@ import {
 	FaXTwitter,
 } from "react-icons/fa6";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import Link from "next/link";
 
 export default function Footer() {
 	return (
@@ -19,6 +20,11 @@ export default function Footer() {
 					aria-labelledby="footer-about"
 					className="lg:col-span-4 col-span-1"
 				>
+                <Link
+					href="/"
+					className="flex items-center space-x-2"
+					aria-label="Go to homepage"
+				>
 					<Image
 						src={Logo}
 						alt="Govt Schemes Guide logo"
@@ -26,6 +32,7 @@ export default function Footer() {
 						height={64}
 						className="mb-4"
 					/>
+               </Link>
 					<p className="text-sm font-figtree text-white leading-relaxed">
 						Govt Schemeguide simplifies access to verified government schemes,
 						offering clear eligibility details, benefits, and easy step-by-step
@@ -88,7 +95,7 @@ export default function Footer() {
 					</h2>
 					<ul className="space-y-2 text-sm text-white font-figtree">
 						{[
-							{ name: "All category", href: "/categorySchemes" },
+							{ name: "All category", href: "/category" },
 							{ name: "Centre schemes", href: "/schemes" },
 							{ name: "State schemes", href: "/schemes" },
 							{ name: "About", href: "/about" },
@@ -167,14 +174,12 @@ export default function Footer() {
 									Privacy Policy
 								</a>
 							</li>
-							<li aria-hidden="true">
-								<span>|</span>
-							</li>
-							<li>
+							
+							{/* <li>
 								<a href="/disclaimer" className="hover:underline" tabIndex={0}>
 									Disclaimer
 								</a>
-							</li>
+							</li> */}
 						</ul>
 					</nav>
 				</div>

@@ -75,6 +75,14 @@ export default function SchemeDetailsPage() {
 		[schemeId]
 	);
 
+useEffect(() => {
+  if (scheme) {
+    document.title = `${scheme.schemeTitle} | Government Schemes`;
+  } else {
+    document.title = "Government Schemes";
+  }
+}, [scheme]);
+
 	useEffect(() => {
 		const controller = new AbortController();
 		fetchSchemeDetails(controller.signal);

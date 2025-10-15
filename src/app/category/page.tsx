@@ -4,6 +4,10 @@ import React from "react";
 const page = () => {
 	return (
 		<div>
+			<head>
+				<title>Government Schemes | Categories</title>
+                <link rel="canonical" href="https://www.govtschemeguide.com/category" />
+			</head>
 			<CategoriesGrid />
 		</div>
 	);

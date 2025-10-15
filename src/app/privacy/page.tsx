@@ -1,26 +1,25 @@
 import React from "react";
-import Head from "next/head";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen text-white font-poppins" role="main">
       <head>
-        <title>Privacy Policy -Gvt</title>
-        <meta name="description" content="Learn about how company protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
-        <meta name="keywords" content="company privacy policy, data protection, user privacy, data security, GDPR compliance, privacy rights" />
-        
+        <title>Privacy Policy - Govtschemeguide</title>
+        <meta name="description" content="Learn about how Govtschemeguide protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
+        <meta name="keywords" content="Govtschemeguide privacy policy, data protection, user privacy, data security, GDPR compliance, privacy rights" />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.govtschemeguide.com/privacy" />
-        <meta property="og:title" content="Privacy Policy - example" />
-        <meta property="og:description" content="Learn about how example protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
+        <meta property="og:title" content="Privacy Policy - Govtschemeguide" />
+        <meta property="og:description" content="Learn about how Govtschemeguide protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
         <meta property="og:image" content="https://example.com/preview.jpg" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://example.com/privacy" />
         <meta property="twitter:title" content="Privacy Policy - example" />
-        <meta property="twitter:description" content="Learn about how Weblibron protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
+        <meta property="twitter:description" content="Learn about how govtschemeguide protects your privacy and handles your data. Our comprehensive privacy policy outlines our data collection, usage, and protection practices." />
         <meta property="twitter:image" content="https://example.com/og-image.jpg" />
         
         {/* Additional Meta Tags */}
@@ -31,7 +30,7 @@ const PrivacyPolicy = () => {
       {/* Banner Section */}
       <header className="relative w-full py-20 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]" role="banner">
         <div className="flex items-center justify-center h-full">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-white">Privacy Policy</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800">Privacy Policy</h1>
         </div>
       </header>
 
@@ -39,7 +38,7 @@ const PrivacyPolicy = () => {
         <div className="max-w-7xl mx-auto">
           <p className="text-base text-gray-800 mb-8">Effective Date: March 2024</p>
           <p className="text-base leading-relaxed mb-8 text-gray-700">
-            At Weblibron, we are committed to protecting your privacy and ensuring
+            At govtschemeguide, we are committed to protecting your privacy and ensuring
             the security of your personal information. This Privacy Policy explains
             how we collect, use, and protect your information when you use our
             website, mobile application, or any other services provided by us.
@@ -241,10 +240,11 @@ const PrivacyPolicy = () => {
               privacy practices, please contact us at:
             </p>
             <address className="text-base space-y-2 not-italic text-gray-700">
-              <p>Heading</p>
-              <p><a href="tel:+918178614811" className="hover:text-primary transition-colors duration-300">+91 8178614811</a></p>
-              <p><a href="mailto:info@exmple@gmail.com" className="hover:text-primary transition-colors duration-300">exmple@gmail.com</a></p>
-              <p>Ajnara Gen X, Gaziabad, Uttar Pradesh, India</p>
+              <p>Contact us: </p>
+              <p><a href="tel:+918273040400" className="hover:text-primary transition-colors duration-300">+91 8273040400</a></p>
+              <p><a href="mailto:care@govtschemeguide.com" className="hover:text-primary transition-colors duration-300">care@govtschemeguide.com</a></p>
+              <p>97, Van Vihar, Mehuwala, Dehradun,
+Uttarakhand, India - 248171</p>
             </address>
           </section>
         </div>

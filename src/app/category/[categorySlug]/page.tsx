@@ -111,7 +111,13 @@ function CategorySchemesContent() {
 		},
 		[categorySlug]
 	);
-
+useEffect(() => {
+  if (categorySlug) {
+    document.title = `Government Schemes |  ${categorySlug}`;
+  } else {
+    document.title = "Government Schemes";
+  }
+}, [categorySlug]);
 	useEffect(() => {
 		const controller = new AbortController();
 		fetchData(0, controller.signal);
@@ -224,7 +230,7 @@ function CategorySchemesContent() {
 	return (
 		<>
 			<head>
-				<title>{getPageTitle()}</title>
+				{/* <title>{getPageTitle()}</title> */}
 				<meta
 					name="description"
 					content={`Discover government schemes for ${categoryName}, including benefits, eligibility criteria, and application processes.`}
