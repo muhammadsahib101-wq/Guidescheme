@@ -56,10 +56,6 @@ export default function AboutPage() {
             outline-offset: 2px;
           }
         `}</style>
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; img-src 'self' https://*.govtschemesindia.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';"
-        />
       </head>
 
       {/* Structured Data for Organization and WebPage */}
@@ -100,7 +96,7 @@ export default function AboutPage() {
       </Script>
 
       <header
-        className="relative w-full py-20 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]"
+        className="relative w-full pb-20 pt-30 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]"
         role="banner"
         aria-labelledby="header-heading"
       >

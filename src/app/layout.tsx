@@ -29,9 +29,9 @@ export default function RootLayout({
 {/* <div id="google_translate_element" style={{ display: "none" }}></div> */}
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow">
+          <div className="flex-grow">
             {children}
-          </main>
+          </div>
           <Footer />
         </div>
       </body>

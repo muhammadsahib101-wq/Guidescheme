@@ -91,7 +91,7 @@ export default function ContactPageClient() {
 	}, [isSubmitted]);
 
 	return (
-		<div className="bg-gray-50 min-h-screen pb-12">
+		<div className="bg-gray-50 min-h-screen pb-12 pt-16">
 			<header className="text-center mb-12 py-12 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]">
 				<h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
 				<p className="text-lg text-gray-700 max-w-3xl mx-auto">

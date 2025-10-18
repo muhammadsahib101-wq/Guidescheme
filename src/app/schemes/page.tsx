@@ -268,7 +268,7 @@ function SchemesContent() {
 				/>
 			</head>
 
-			<section className="bg-white mt-14" aria-labelledby="schemes-heading">
+			<section className="bg-white mt-14 pt-20" aria-labelledby="schemes-heading">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-col lg:flex-row gap-8">
 						<main className="lg:w-2/3">

@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
       </head>
       
       {/* Banner Section */}
-      <header className="relative w-full py-20 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]" role="banner">
+      <header className="relative w-full pt-30 pb-20 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]" role="banner">
         <div className="flex items-center justify-center h-full">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800">Privacy Policy</h1>
         </div>

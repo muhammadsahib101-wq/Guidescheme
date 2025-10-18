@@ -106,7 +106,7 @@ useEffect(() => {
 	return (
 		<>
 			<SchemeMeta scheme={scheme} />
-			<main className="min-h-screen">
+			<main className="min-h-screen pt-16">
 				<SchemeHeader scheme={scheme} formatDate={formatDate} />
 				<SchemeNavigation scheme={scheme} />
 
