@@ -96,7 +96,7 @@ export default function AboutPage() {
       </Script>
 
       <header
-        className="relative w-full pb-20 pt-30 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]"
+        className="relative w-full pb-20 pt-40 bg-gradient-to-br from-[#FFFFFF] via-[#BFF5D4] to-[#FFFFFF]"
         role="banner"
         aria-labelledby="header-heading"
       >
