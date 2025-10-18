@@ -21,7 +21,7 @@
           "value": "govtschemeguide.com"
         }
       ],
-      "destination": "https://www.govtschemeguide.com/:1",
+      "destination": "https://www.govtschemeguide.com/",
       "permanent": true
     }
   ]
