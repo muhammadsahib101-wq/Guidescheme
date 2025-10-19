@@ -32,7 +32,7 @@ export default function Home() {
 					content="Find and compare over 1,000+ government welfare schemes in India. Get eligibility, benefits, and application steps for agriculture, education, business, health, and more."
 				/>
 				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://www.govtschemesindia.com/" />
+				<meta property="og:url" content="https://www.govtschemeguide.com/" />
 				<meta property="og:image" content="/about-img.png" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta
@@ -44,7 +44,7 @@ export default function Home() {
 					content="Find and compare over 1,000+ government welfare schemes in India. Get eligibility, benefits, and application steps for agriculture, education, business, health, and more."
 				/>
 				<meta name="twitter:image" content="/about-img.png" />
-				<link rel="canonical" href="https://www.govtschemesindia.com/" />
+				<link rel="canonical" href="https://www.govtschemeguide.com/" />
 			</head>
 
 			{/* Structured Data for Website */}
@@ -54,10 +54,10 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Govt Schemes India",
-            "url": "https://www.govtschemesindia.com/",
+            "url": "https://www.govtschemeguide.com/",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://www.govtschemesindia.com/search?q={search_term_string}",
+              "target": "https://www.govtschemeguide.com/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           }
