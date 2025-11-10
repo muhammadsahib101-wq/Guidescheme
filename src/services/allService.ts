@@ -162,6 +162,100 @@ export interface CategoriesResponse {
   message?: string;
 }
 
+// Discussion Interfaces
+export interface Discussion {
+  _id: string;
+  scheme: {
+    _id: string;
+    schemeTitle: string;
+    slug: string;
+  };
+  discussionTitle: string;
+  discussionInBrief: string;
+  name: string;
+  mobileNo: string;
+  gender: string;
+  dateOfBirth: string;
+  cast: string;
+  religion: string;
+  houseNumber: string;
+  locality: string;
+  city: string;
+  wardNumber: string;
+  tehsil: string;
+  district: string;
+  state: string | null;
+  category: string[];
+  pinCode: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+export interface DiscussionsResponse {
+  success: boolean;
+  length: number;
+  message: string;
+  data: Discussion[];
+}
+
+export interface DiscussionDetailResponse {
+  success: boolean;
+  message: string;
+  data: Discussion;
+}
+
+export interface CreateDiscussionPayload {
+  scheme: string;
+  discussionTitle: string;
+  discussionInBrief: string;
+  name: string;
+  mobileNo: string;
+  gender: string;
+  category: string[];
+  dateOfBirth: string;
+  cast: string;
+  religion: string;
+  houseNumber: string;
+  locality: string;
+  city: string;
+  wardNumber: string;
+  tehsil: string;
+  district: string;
+  state?: string;
+  pinCode: string;
+}
+
+export interface Reply {
+  _id: string;
+  discussionId: {
+    _id: string;
+    discussionTitle: string;
+  };
+  yourName: string;
+  yourEmail: string;
+  subject: string;
+  comment: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+export interface RepliesResponse {
+  success: boolean;
+  count: number;
+  message: string;
+  data: Reply[];
+}
+
+export interface CreateReplyPayload {
+  discussionId: string;
+  yourName: string;
+  yourEmail: string;
+  subject: string;
+  comment: string;
+}
+
 
 // -------------------------------------Below is only apis---------------------------------------------------------------
 
@@ -291,6 +385,122 @@ export const searchSchemes = async (query: string): Promise<SchemesResponse> => 
       data: [],
       message: 'Failed to search schemes. Please try again.',
       total: 0
+    };
+  }
+};
+
+// Discussion API Functions
+export const getAllDiscussions = async (
+  schemeId: string,
+  signal?: AbortSignal
+): Promise<DiscussionsResponse> => {
+  try {
+    const response = await apiClient.get<DiscussionsResponse>(
+      `allDiscussions?schemeId=${schemeId}`,
+      { signal }
+    );
+    return response.data;
+  } catch (error) {
+    if ((error as DOMException)?.name === 'AbortError') {
+      return {
+        success: false,
+        length: 0,
+        message: 'Request aborted',
+        data: []
+      };
+    }
+    console.error('Error fetching discussions:', error);
+    return {
+      success: false,
+      length: 0,
+      message: 'Failed to fetch discussions',
+      data: []
+    };
+  }
+};
+
+export const getDiscussionById = async (
+  discussionId: string,
+  signal?: AbortSignal
+): Promise<DiscussionDetailResponse> => {
+  try {
+    const response = await apiClient.get<DiscussionDetailResponse>(
+      `getDiscussionById/${discussionId}`,
+      { signal }
+    );
+    return response.data;
+  } catch (error) {
+    if ((error as DOMException)?.name === 'AbortError') {
+      return {
+        success: false,
+        message: 'Request aborted',
+        data: {} as Discussion
+      };
+    }
+    console.error('Error fetching discussion:', error);
+    return {
+      success: false,
+      message: 'Failed to fetch discussion details',
+      data: {} as Discussion
+    };
+  }
+};
+
+export const createDiscussion = async (
+  payload: CreateDiscussionPayload
+): Promise<{ success: boolean; message: string; data?: unknown }> => {
+  try {
+    const response = await apiClient.post('registerDiscussion', payload);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating discussion:', error);
+    return {
+      success: false,
+      message: 'Failed to create discussion'
+    };
+  }
+};
+
+export const getAllReplies = async (
+  discussionId: string,
+  signal?: AbortSignal
+): Promise<RepliesResponse> => {
+  try {
+    const response = await apiClient.get<RepliesResponse>(
+      `allReply?discussionId=${discussionId}`,
+      { signal }
+    );
+    return response.data;
+  } catch (error) {
+    if ((error as DOMException)?.name === 'AbortError') {
+      return {
+        success: false,
+        count: 0,
+        message: 'Request aborted',
+        data: []
+      };
+    }
+    console.error('Error fetching replies:', error);
+    return {
+      success: false,
+      count: 0,
+      message: 'Failed to fetch replies',
+      data: []
+    };
+  }
+};
+
+export const createReply = async (
+  payload: CreateReplyPayload
+): Promise<{ success: boolean; message: string; data?: unknown }> => {
+  try {
+    const response = await apiClient.post('registerReply', payload);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating reply:', error);
+    return {
+      success: false,
+      message: 'Failed to create reply'
     };
   }
 };

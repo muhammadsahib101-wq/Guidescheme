@@ -37,7 +37,7 @@ export default function SchemeNavigation({ scheme }: { scheme: ApiScheme }) {
 
 			{/* Discussion Forum Button */}
 			<button
-				onClick={() => router.push("/discussion")}
+				onClick={() => router.push(`/discussion/${scheme._id}`)}
 				className="min-w-[160px] px-4 py-2 rounded-full font-medium text-base font-figtree transition-all duration-200 bg-blue-500 hover:bg-blue-600 text-white shadow-md"
 			>
 				Discussion Forum
